@@ -1,0 +1,7 @@
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Test\DopTaskSIAOD\DopTaskSIAOD\bin\Debug\DopTaskSIAOD.exe.config
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Test\DopTaskSIAOD\DopTaskSIAOD\bin\Debug\DopTaskSIAOD.exe
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Test\DopTaskSIAOD\DopTaskSIAOD\bin\Debug\DopTaskSIAOD.pdb
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Test\DopTaskSIAOD\DopTaskSIAOD\obj\Debug\DopTaskSIAOD.csprojAssemblyReference.cache
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Test\DopTaskSIAOD\DopTaskSIAOD\obj\Debug\DopTaskSIAOD.csproj.CoreCompileInputs.cache
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Test\DopTaskSIAOD\DopTaskSIAOD\obj\Debug\DopTaskSIAOD.exe
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Test\DopTaskSIAOD\DopTaskSIAOD\obj\Debug\DopTaskSIAOD.pdb
