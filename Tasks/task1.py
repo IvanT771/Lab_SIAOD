@@ -1,4 +1,4 @@
-print("Hello")
+print("Введите кол-во записей в журнале")
 def Serch():
     N = int(input())
     str = []
@@ -32,7 +32,7 @@ def Serch():
         if _close > _open: #Закрытых закон.проект. не может быть больше открытых
             return "NO"
         if _close == _open:
-            if end-begin == 1: #Если между законопроектом нет других проектов
+            if end-begin == 1: #Если между началом голосования за зоконо. и концом нет других проектов
                 if len(str)-1 != save:
                     begin = save+1
                 else:
@@ -47,7 +47,6 @@ def Serch():
         else:
             end=end+1
 
-    return "yyyyy"
+    return "No"
     
 print(Serch())
-print("End")
