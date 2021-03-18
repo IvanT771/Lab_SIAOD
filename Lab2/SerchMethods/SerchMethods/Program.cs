@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Timers;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -6,7 +7,7 @@ namespace SerchMethods
 {
     class Task1
     {
-        public int BinarySerch(int[] array, int x)
+        public int BinarySearch(int[] array, int x)
         {
             Array.Sort(array);
 
@@ -33,7 +34,7 @@ namespace SerchMethods
             }
             return -1;
         }
-        public int BinaryTreeSerch(int[] array, int x)
+        public int BinaryTreeSearch(int[] array, int x)
         {
             BinaryTree1 binaryTree = new BinaryTree1();
             //Заполняем дерево
@@ -64,7 +65,7 @@ namespace SerchMethods
                 fib[i] = fib[i-2]+fib[i-1];
             }
         }
-        public int FeebonachiSerch(int[] array, int x)
+        public int FeebonachiSearch(int[] array, int x)
         {
             Array.Sort(array);
 
@@ -98,6 +99,29 @@ namespace SerchMethods
                 }
             }
             
+        }
+        public int InterpolationSearch(int[] array, int x)
+        {
+            Array.Sort(array);
+            int start = 0;
+            int end = array.Length-1;
+
+            while (start<x && end>x)
+            {
+                int d = start+((end-start)*(x-array[start]))/(array[end]-array[start]);
+
+                if(array[d] == x) { return d;}
+
+                if (array[d] > x)
+                {
+                    end = d-1;
+                }
+                else
+                {
+                    start = d+1;
+                }
+            }
+            return -1;
         }
         class BinaryTree1
         {
@@ -171,6 +195,139 @@ namespace SerchMethods
         }
 
     }
+    class Task2
+    {
+        public void SearchHash(int value)
+        {
+            SimplHash simplHash = new SimplHash(100);
+
+            for (int i = 0; i < 50; i++)
+            {
+                simplHash.Add(i);
+            }
+            Console.WriteLine("Search Hash get key = "+simplHash.GetKey(value));
+
+        }
+        class SimplHash
+        {
+            
+            private int[] map;
+           public SimplHash(int size)
+            {
+                map = new int[size];
+
+                for (int i = 0; i < map.Length; i++)
+                {
+                    map[i] = -1;
+                }
+            }
+            int Hash(int key,int layer)
+            {
+               
+                return ((key+layer)%map.Length);
+            }
+
+            public void Add(int value)
+            {
+                int layer = 0;
+                int h = Hash(value,layer);
+
+                if(map[h] == -1)
+                {
+                    map[h] = value;
+                }
+                else
+                {
+                    for (int i = 1; i < map.Length; i++)
+                    {
+                        if(Hash(value,i) == h)
+                        {
+                            throw new OutOfMemoryException();
+                        }
+                        if (map[Hash(value, i)] != -1)
+                        {
+                            map[h] = value;
+                            return;
+                        }
+                    }
+                }
+            }
+            public int SearchKey(int key)
+            {
+                if(key<0 || key >= map.Length)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+
+                return map[key];
+            }
+            public int SearchValue(int value)
+            {
+                int layer = 0;
+                int h = Hash(value,layer);
+
+                if(map[h] == value) { return value;}
+
+                for (int i = 1; i < map.Length; i++)
+                {
+                    if (Hash(value, i) == h)
+                    {
+                        return -1;
+                    }
+                    if (map[Hash(value, i)] == value)
+                    {
+                        
+                        return value;
+                    }
+                }
+
+                return -1;
+            }
+            public int GetKey(int value)
+            {
+                int layer = 0;
+                int h = Hash(value, layer);
+
+                if (map[h] == value) { return h; }
+
+                for (int i = 1; i < map.Length; i++)
+                {
+                    if (Hash(value, i) == h)
+                    {
+                        return -1;
+                    }
+                    if (map[Hash(value, i)] == value)
+                    {
+
+                        return Hash(value, i);
+                    }
+                }
+
+                return -1;
+            }
+            public void RemoveValue(int value)
+            {
+                int layer = 0;
+                int h = Hash(value, layer);
+
+                if (map[h] == value) { map[h] =-1; }
+
+                for (int i = 0; i < map.Length; i++)
+                {
+                    if (Hash(value, i) == h)
+                    {
+                        return;
+                    }
+                    if (map[Hash(value, i)] == value)
+                    {
+
+                        map[Hash(value, i)] = -1;
+                    }
+                }
+            }
+
+        }
+    }
     class Program
     {
         static void PullArray(int[] arr)
@@ -178,25 +335,57 @@ namespace SerchMethods
             Random rnd = new Random();
             for (int i = 0; i < arr.Length; i++)
             {
-              //  arr[i] = rnd.Next(0,100);
-                arr[i] = i;
+                arr[i] = rnd.Next(0,10000);
+                //arr[i] = i;
             }
         }
         static void Main(string[] args)
         {
-            int[] arr = new int[14];
+            int[] arr = new int[100000];
             PullArray(arr);
+            System.Diagnostics.Stopwatch myStopwatch = new System.Diagnostics.Stopwatch();
 
             Task1 task1 = new Task1();
+            int index = 0;
             //Бинарный поиск
-            int index = task1.BinarySerch(arr,14);
+            myStopwatch.Start();
+            // index = task1.BinarySearch(arr,12);
+            myStopwatch.Stop();
             Console.WriteLine("BinarySerch: " + index);
+            Console.WriteLine("Time: " + myStopwatch.ElapsedMilliseconds+" ms");
+
             //Поиск деревом
-            index = task1.BinaryTreeSerch(arr,12);
+            myStopwatch.Reset();
+            myStopwatch.Start();
+            index = task1.BinaryTreeSearch(arr,12);
+            myStopwatch.Stop();
             Console.WriteLine("BinaryTreeSerch " + index);
+            Console.WriteLine("Time: " + myStopwatch.ElapsedMilliseconds + " ms");
+
             //Поиск Фибоначи
-            index = task1.FeebonachiSerch(arr,14);
+            myStopwatch.Reset();
+            myStopwatch.Start();
+            index = task1.FeebonachiSearch(arr,12);
+            myStopwatch.Stop();
             Console.WriteLine("FibonachiSerch " + index);
+            Console.WriteLine("Time: " + myStopwatch.ElapsedMilliseconds + " ms");
+
+            //Интерполяционный поиск
+            myStopwatch.Reset();
+            myStopwatch.Start();
+            index = task1.InterpolationSearch(arr,12);
+            myStopwatch.Stop();
+            Console.WriteLine("InterpolationSerch " + index);
+            Console.WriteLine("Time: " + myStopwatch.ElapsedMilliseconds + " ms");
+
+            //Простое рехеширование
+            Task2 task2 = new Task2();
+
+            myStopwatch.Reset();
+            myStopwatch.Start();
+            task2.SearchHash(10);
+            myStopwatch.Stop();
+            Console.WriteLine("Time: " + myStopwatch.ElapsedMilliseconds + " ms");
             Console.Read();
         }
     }
