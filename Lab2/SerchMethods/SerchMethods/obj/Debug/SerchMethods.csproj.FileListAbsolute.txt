@@ -1,0 +1,7 @@
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Lab_SIAOD\Lab2\SerchMethods\SerchMethods\bin\Debug\SerchMethods.exe.config
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Lab_SIAOD\Lab2\SerchMethods\SerchMethods\bin\Debug\SerchMethods.exe
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Lab_SIAOD\Lab2\SerchMethods\SerchMethods\bin\Debug\SerchMethods.pdb
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Lab_SIAOD\Lab2\SerchMethods\SerchMethods\obj\Debug\SerchMethods.csprojAssemblyReference.cache
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Lab_SIAOD\Lab2\SerchMethods\SerchMethods\obj\Debug\SerchMethods.csproj.CoreCompileInputs.cache
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Lab_SIAOD\Lab2\SerchMethods\SerchMethods\obj\Debug\SerchMethods.exe
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Lab_SIAOD\Lab2\SerchMethods\SerchMethods\obj\Debug\SerchMethods.pdb
