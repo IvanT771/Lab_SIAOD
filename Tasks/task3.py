@@ -3,52 +3,74 @@ N = int(input())
 str = []
 for i in range(0,N,1):
 	str.append(input())
-result = " "
-for d in range(0,N,1):
-	max1 = " "
-	max2 = " "
-	ind = 0
 
-	for i in range(0,N,1):
-		if str[i][0] > max1[0]:
-			max1 = str[i]
-			ind = i
-	str[ind] = " "
+##-------------Метод сравнения двух строковых чисел-----------------------
+##----возвращает True - если первое число (x) больше-----------------------
+def sortt(x,y):
+	if len(x) == len(y):
+		for j in range(0,len(x),1):
+			if x[j] > y[j]:
+				##print("result: "+x+y)
+				return True
+			if x[j] < y[j]:
+				##print("result: "+y+x)
+				return False
+	if len(x) > len(y):
+		for i in range(0,len(y),1):
+			if x[i] > y[i]:
+				##print("result: "+x+y)
+				return True
+			if x[i] < y[i]:
+				##print("result: "+y+x)
+				return False
+		for i in range(0,len(x),1):
+			if x[i] > y[len(y)-1]:
+				##print("result: "+x+y)
+				return True
+			if x[i] < y[len(y)-1]:
+				##print("result: "+y+x)
+				return False
+	if len(x) < len(y):
+		for i in range(0,len(x),1):
+			if x[i] > y[i]:
+				##print("result: "+x+y)
+				return True
+			if x[i] < y[i]:
+				##print("result: "+y+x)
+				return False
+		for i in range(0,len(y),1):
+			if x[len(x)-1] > y[i]:
+				##print("result: "+x+y)
+				return True
+			if x[len(x)-1] < y[i]:
+				##print("result: "+y+x)
+				return False
+	return True
+##-------------------------КОНЕЦ МЕТОДА------------------------------------
 
-	for i in range(0,N,1):
-		if str[i][0] > max2[0]:
-			max2 = str[i]
-			ind = i
-	str[ind] = " "
-	maxima = True
-	if max1[0] == max2[0] and max1[0] != ' ':
-		l = 0
-		if len(max1) > len(max2):
-			l = len(max2)
-		else:
-			l = len(max1)
-
-			for j in range(0,l,1):
-				if max1[j] > max2[j]:
-					maxima = True
-					break
-				if max1[j] < max2[j]:
-					maxima = False
-					break
-	print(max1)
-	print(max2)
-	if max1[0] != ' ' and maxima:
-		result+=max1
-		if max2[0] != ' ':
-			result+=max2
-	else:
-		if max2[0] != ' ':
-			result+=max2
-		if max1[0] != ' ':
-			result +=max1
-
-print(maxima)			
+##---Сортируем числа
+for i in range(0,N,1):
+	for j in range(0,N,1):
+		if sortt(str[i],str[j]):
+			t = str[i]
+			str[i] = str[j]
+			str[j] = t
+##--Вывод результата
+result = ""
+for i in range(0,N,1):
+	result+=str[i]
 print(result)
+
+
+
+	
+
+
+
+
+
+		
+
 
 	
 	
