@@ -1,0 +1,7 @@
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Lab_SIAOD\Lab3\SearchString\SearchString\bin\Debug\SearchString.exe.config
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Lab_SIAOD\Lab3\SearchString\SearchString\bin\Debug\SearchString.exe
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Lab_SIAOD\Lab3\SearchString\SearchString\bin\Debug\SearchString.pdb
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Lab_SIAOD\Lab3\SearchString\SearchString\obj\Debug\SearchString.csprojAssemblyReference.cache
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Lab_SIAOD\Lab3\SearchString\SearchString\obj\Debug\SearchString.csproj.CoreCompileInputs.cache
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Lab_SIAOD\Lab3\SearchString\SearchString\obj\Debug\SearchString.exe
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Lab_SIAOD\Lab3\SearchString\SearchString\obj\Debug\SearchString.pdb
