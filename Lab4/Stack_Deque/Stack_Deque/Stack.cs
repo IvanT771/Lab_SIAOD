@@ -15,16 +15,16 @@ namespace Stack_Deque
         {
             if (size <= 0) { size = 100;}
             array = new int[size];
-            currentIndex = -1;
+            currentIndex = 0;
         }
 
         //Операция добавления элемента в стэк
         public void Push(int args)
         {
-            if (array.Length <= (currentIndex-1)) { Console.WriteLine("Stack full!!!"); return; }
+            if (array.Length <= currentIndex) { Console.WriteLine("Stack full!!!"); return; }
 
-            currentIndex++;
             array[currentIndex] = args;
+            currentIndex++;
         }
 
         //Операция удаления последнего элемента
@@ -35,16 +35,30 @@ namespace Stack_Deque
         }
 
         //Операция получения элемента
-        public int Get()
+        public int Peek()
         {
-            if (currentIndex < 0) { Console.WriteLine("Stack is empty!");  return 0;}
+            if (currentIndex <= 0) { Console.WriteLine("Stack is empty!");  return 0;}
+            return array[currentIndex-1];
+        }
+
+        //Операция получения элемента и его удаления
+        public int Pop()
+        {
+            if (currentIndex <= 0) { Console.WriteLine("Stack is empty!"); return 0; }
+            currentIndex--;
             return array[currentIndex];
+        }
+
+        //Операция получения размера стека
+        public int GetLength()
+        {
+            return currentIndex;
         }
 
         //Операция проверки на пустоту
         public bool isEmpty()
         {
-            if (currentIndex < 0) { return true;}
+            if (currentIndex <= 0) { return true;}
             return false;
         }
     }
@@ -58,7 +72,7 @@ namespace Stack_Deque
         {
             if (size <= 0) { size = 100; }
             array = new int[size];
-            indexEnd = -1;
+            indexEnd = 0;
         }
 
         //Операция добавления элемента в конец
@@ -90,7 +104,7 @@ namespace Stack_Deque
         public void DeleteEnd()
         {
             if (isEmpty()) { Console.WriteLine("Stack is empty!"); return; }
-            indexEnd-=2;
+            indexEnd-=1;
             indexEnd = Math.Max(0,indexEnd);
         }
 
@@ -98,14 +112,27 @@ namespace Stack_Deque
         public int GetEnd()
         {
             if (indexEnd-1 < 0) { Console.WriteLine("Stack is empty!"); return 0; }
-            return array[indexEnd-1];
+            indexEnd--;
+            return array[indexEnd];
         }
 
         //Операция получения первого элемента
         public int GetStart()
         {
             if (isEmpty()) { Console.WriteLine("Stack is empty!"); return 0; }
-            return array[0];
+
+            var buf= array[0];
+            for (int i = 0; i < array.Length-1; i++)
+            {
+                array[i] = array[i+1];
+            }
+            indexEnd--;
+            return buf;
+        }
+
+        public int GetLength()
+        {
+            return indexEnd;
         }
 
         //Операция проверки на пустоту
