@@ -1,0 +1,7 @@
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Lab_SIAOD\Lab4\Stack_Deque\Stack_Deque\bin\Debug\Stack_Deque.exe.config
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Lab_SIAOD\Lab4\Stack_Deque\Stack_Deque\bin\Debug\Stack_Deque.exe
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Lab_SIAOD\Lab4\Stack_Deque\Stack_Deque\bin\Debug\Stack_Deque.pdb
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Lab_SIAOD\Lab4\Stack_Deque\Stack_Deque\obj\Debug\Stack_Deque.csprojAssemblyReference.cache
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Lab_SIAOD\Lab4\Stack_Deque\Stack_Deque\obj\Debug\Stack_Deque.csproj.CoreCompileInputs.cache
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Lab_SIAOD\Lab4\Stack_Deque\Stack_Deque\obj\Debug\Stack_Deque.exe
+D:\Лабораторные работы 4 семестр (2 курс)\СИАОД\Lab_SIAOD\Lab4\Stack_Deque\Stack_Deque\obj\Debug\Stack_Deque.pdb
